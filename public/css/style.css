@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap');
+
+
+*::-webkit-scrollbar{
+    display: none;
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.auth-container{
+    max-width: 550px;
+    height: 70%;
+    margin: 2.8% auto;
+    padding: 20px;
+    box-shadow: 1px 1px 2px rgb(240, 159, 68),
+                -1px -1px 2px rgb(240, 159, 68);
+    background-color: white;
+}
+
+.auth-mg{
+    margin-bottom: 6%;
+}
+
+.my-navbar{
+    background-color: rgb(240, 159, 68);
+    color: white;
+    box-shadow: 1px 2px 2px rgb(240, 159, 68),
+                -1px -1px 2px rgb(240, 159, 68);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    font-weight: 800;
+    padding-left: 20px;
+}
+
+.logout-btn{
+    font-weight: 600;
+    box-shadow: 1px 1px 2px rgb(202, 201, 201),
+                -1px -1px 2px rgb(202, 201, 201);
+}

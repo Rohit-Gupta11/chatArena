@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head')%>
+</head>
+
+<body>
+
+  <%- include('../partials/authnav')%>
+
+  <div class="auth-container">
+
+    <h1 class="auth-mg is-size-3">Welcome back!</h1>
+    <form action="/auth/login" method="post" id="login-form">
+      <div class="field">
+        <p class="auth-mg control has-icons-left has-icons-right">
+          <input class="input" name="email" type="email" placeholder="Email" required>
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+        </p>
+      </div>
+      <div class="field">
+        <p class="auth-mg control has-icons-left">
+          <input class="input" type="password" placeholder="Password" name="password" required>
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+      </div>
+      <div class="field">
+        <p class="control">
+          <button class="button is-success">
+            Login
+          </button>
+          <a href="/auth/register" class="button is-outlined is-link ">Create a new account</a>
+        </p>
+      </div>
+    </form>
+  </div>
+  <script src="js/login-functions.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</body>
+
+</html>
