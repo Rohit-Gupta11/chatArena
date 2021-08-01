@@ -3,6 +3,8 @@ const express = require('express')
 const http = require('http')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
+const mongoose = require('mongoose')
+const { verify } = require('jsonwebtoken')
 const PORT = process.env.PORT || 4000
 const app = express()
 const server = http.createServer(app)
@@ -21,12 +23,22 @@ app.set('view engine', 'ejs')
 
 app.use(express.static('public'))
 
-app.get('/', (req,res) => {
-    res.render('login')
+app.get('/', (req, res) => {
+    const accessToken = req.cookies["access-token"]
+    if(accessToken){
+        const validToken = verify(accessToken, "jwtsecretplschange");
+        if(validToken){
+            res.redirect('/chat')
+        }else{
+            res.render('login')
+        }
+    }else {
+        res.render('login')
+    }
 })
 
 app.use('/auth', authRouter)
-app.use('chat', chatRouter)
+app.use('/chat', chatRouter)
 
 // io.on('connection', (socket) => {
 //     console.log(`user connected and id ${socket.id}`)
@@ -35,9 +47,9 @@ app.use('chat', chatRouter)
 //     })
 // })
 
-// mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
-//     console.log('db connected')
-// })
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+    console.log('db connected')
+})
 
 server.listen(PORT, () => {
     console.log("this is working well")
