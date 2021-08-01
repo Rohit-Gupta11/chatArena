@@ -20,6 +20,7 @@ registerForm.addEventListener('submit', (event) => {
         .then(response => response.json())
         .then(data => {
             if (data.logined == true) {
+                localStorage.setItem('currentUser', JSON.stringify({ _id: data.currentUser._id, fullname: data.currentUser.fullname }))
                 location.href = '/chat'
             }
             else if(data.logined == false) {

@@ -5,7 +5,7 @@ const { validateToken } = require("./jwt");
 chatRouter.use(express.static('public'))
 
 chatRouter.get('/',  validateToken, (req, res) => {
-    res.send('chat window ')
+    res.render('chatlist')
 })
 
 module.exports = chatRouter

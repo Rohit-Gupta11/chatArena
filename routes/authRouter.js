@@ -30,7 +30,7 @@ authRouter.get('/login', (req, res) => {
     }else {
         res.render('login')
     }
-    
+
 })
 
 authRouter.post('/login', async (req, res) => {
@@ -122,9 +122,11 @@ authRouter.post('/register', async (req, res) => {
 })
 
 // logout route
-authRouter.delete('/logout', (req, res) => {
-    req.session.user = null
-    res.sendStatus(200)
+authRouter.post('/logout', validateToken, (req, res) => {
+    res.clearCookie("access-token")
+    req.authenticated = false;
+    req.authenticated.save()
+    res.status(200)
 })
 
 module.exports = authRouter
