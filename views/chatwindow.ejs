@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head')%>
+</head>
+
+<body>
+    <%- include('../partials/chatnav')%>
+    <div class="chat-container">
+        <div class="user-dash" id="user-dash">
+            <div class="your-chat">
+                <span class="icon is-medium is-left">
+                    <i class="fas fa-lg fa-comments"></i>
+                </span>
+                <p class="is-size-4" style="font-weight: 600; margin-left: 2%;"><%= groupName %></p>
+            </div>
+            <div id="your-list" class="your-list">
+            </div>
+        </div>
+
+        <div class="chat-window" id="chat-window">
+            <div class="chat-history" id="chat-history">
+            </div>
+            <div class="send-area" id="send-area">
+                <input placeholder="Write a message" type="text" name="message" id="message-input"
+                    class="input is-primary message-input">
+                <div id="send-btn" class="send-btn">Send</div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/chat-handler.js"></script>
+    <script src="js/chat-functions.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</body>
+
+</html>
