@@ -46,7 +46,8 @@ authRouter.post('/login', async (req, res) => {
             bcrypt.compare(password, result.password, (err, response) => {
                 if (response) {
                     const accessToken = createTokens(result);
-
+                    
+                    // storing an access token
                     res.cookie("access-token", accessToken, {
                         maxAge: 60 * 60 * 24 * 30 * 1000,
                         httpOnly: true,
