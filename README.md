@@ -1,4 +1,3 @@
-
 # ChatArena
 
 A group chat web app developed using node js, express js and socket.io. Here, user can chat in a particular group of same interest.
@@ -45,13 +44,20 @@ Install dependencies
   npm install
 ```
 
+Create a .env file and write the following in this file.
+
+```bash
+  MONGO_URI='<Your MongoDB connection URI>'
+```
+
+
 Start the server
 
 ```bash
   npm start
 ```
 
-  
+
 ## Features
 
 - Realtime group chatting
