@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 const authRouter = express.Router();
 const saltRounds = 10;
-const { createTokens, validateToken } = require("./jwt");
+const { createTokens, validateToken } = require("../middlewares/jwt");
 const { verify } = require('jsonwebtoken')
 
 authRouter.use(express.static('public'))

@@ -1,6 +1,6 @@
 const express = require('express');
 const chatRouter = express.Router();
-const { validateToken } = require("./jwt");
+const { validateToken } = require("../middlewares/jwt");
 const mongoose = require('mongoose')
 
 chatRouter.use(express.static('public'))
