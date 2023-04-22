@@ -6,7 +6,7 @@ A group chat web app developed using node js, express js and socket.io. Here, us
 
 You can visit the link below to experience this web app.
 
-**Live Link:** https://chatarenago.herokuapp.com/
+**Live Link:** [https://chatarena.onrender.com](https://chatarena.onrender.com)
 
   
 ## Tech Stack
